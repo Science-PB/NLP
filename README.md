@@ -42,6 +42,7 @@ Data: The dataset consists of 6 different sentences which are labeled as Inspiri
 
 
 References: 
+
 Badreesh Shetty, (2018). Natural Language Processing(NLP) for Machine Learning. Retrieved from: https://towardsdatascience.com/natural-language-processing-nlp-for-machine-learning-d44498845d5b
 
 Jaya Aiyappan, (2019). Naive Bayes Classifier for Text Classification. Retrieved from: https://medium.com/analytics-vidhya/naive-bayes-classifier-for-text-classification-556fabaf252b#:~:text=The%20Naive%20Bayes%20classifier%20is,time%20and%20less%20training%20data.
