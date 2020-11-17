@@ -1,0 +1,37 @@
+import pandas as pd
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn import metrics
+
+columns = ["Sentence", "Class"]
+rows = []
+
+rows = [["Your limitation—it’s only your imagination", "Inspiring"],
+        ["Push yourself, because no one else is going to do it for you", "Inspiring"],
+        ["Sometimes later becomes never, do it now", "Inspiring"],
+        ["Great things never come from comfort zones", "Inspiring"], 
+        ["It's great to be yourself", "Dull"],
+        ["A goal is a dream with a plan", "Dull"]]
+
+training_data = pd.DataFrame(rows, columns = columns)
+training_data
+
+
+training_docs = training_data["Sentence"]
+training_docs.head(2)
+
+training_labels = training_data["Class"]
+training_labels.head(2)
+
+test_text = """Dream it. Wish it. Do it."""
+
+count_v = CountVectorizer()
+training_vectors = count_v.fit_transform(training_docs)
+test_vectors = count_v.transform([test_text])
+
+classifier = MultinomialNB()
+classifier.fit(training_vectors, training_labels)
+predictions = classifier.predict(test_vectors)
+
+
+print("Look like it's", predictions)
